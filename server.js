@@ -13,13 +13,14 @@ app.use(express.json());
 app.use(cors());
 
 
-db.initialize("mongodb+srv://Anmol:Anmol84@cluster0.5rqdb.mongodb.net/sample_restaurants?retryWrites=true&w=majority").then(()=>{
+db.initialize("mongodb+srv://Anmol:Anmol84@cluster0.0cbk2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority").then(()=>{
     app.listen(HTTP_PORT, ()=>{
     console.log(`server listening on: ${HTTP_PORT}`);
     });
    }).catch((err)=>{
     console.log(err);
    });
+
    
 
 app.get("/", (req,res) =>{
