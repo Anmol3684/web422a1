@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const HTTP_PORT = process.env.PORT || 8080
+var PORT = process.env.PORT || 8080
 
 //require the restaurant.js file 
 const RestaurantDB = require("./modules/restaurantDB.js");
@@ -14,8 +14,8 @@ app.use(cors());
 
 
 db.initialize("mongodb+srv://<username>:<password>@samplerest.5rqdb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority").then(()=>{
-    app.listen(HTTP_PORT, ()=>{
-    console.log(`server listening on: ${HTTP_PORT}`);
+    app.listen(PORT, ()=>{
+    console.log(`server listening on: ${PORT}`);
     });
    }).catch((err)=>{
     console.log(err);
